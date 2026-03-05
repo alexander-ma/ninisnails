@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nini's Nails ✦ Cute Nail Artistry</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #FFBF00;
+    --pink: #FF3E7F;
+    --pink-light: #FFD6E7;
+    --pink-pale: #FFF0F6;
+    --dark: #1a1a2e;
+    --black: #2b1d1d;
+    --white: #fffdf8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--pink-pale); }
+  ::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 10px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 200;
+    padding: 1rem 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--yellow);
+    border-bottom: 3px solid var(--black);
+    box-shadow: 0 4px 0 var(--black);
+  }
+  .nav-logo {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.7rem;
+    color: var(--pink);
+    text-shadow: 2px 2px 0 var(--black);
+  }
+  .nav-logo span { color: var(--black); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    color: var(--black);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -3px; left: 0;
+    width: 0; height: 3px;
+    background: var(--pink); border-radius: 2px;
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--pink); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-book-btn {
+    font-family: 'Fredoka One', cursive;
+    background: var(--pink); color: white;
+    border: 2.5px solid var(--black);
+    padding: 0.5rem 1.3rem;
+    border-radius: 50px;
+    cursor: pointer; font-size: 1rem;
+    box-shadow: 3px 3px 0 var(--black);
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+  }
+  .nav-book-btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--black); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    background: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    padding: 7rem 3rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .star-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .star-bg span {
+    position: absolute;
+    animation: floatStar 6s ease-in-out infinite;
+    opacity: 0.3;
+  }
+  @keyframes floatStar {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(20deg); }
+  }
+  .hero-content {
+    display: flex; align-items: center; justify-content: center;
+    gap: 4rem; flex-wrap: wrap; max-width: 1100px; z-index: 1;
+  }
+  .hero-text { max-width: 500px; }
+  .hero-tag {
+    display: inline-block;
+    background: var(--pink); color: white;
+    font-family: 'Fredoka One', cursive; font-size: 0.85rem;
+    padding: 0.3rem 1rem; border-radius: 50px;
+    border: 2px solid var(--black); box-shadow: 2px 2px 0 var(--black);
+    margin-bottom: 1.2rem; letter-spacing: 1px;
+  }
+  .hero-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    color: var(--pink); text-shadow: 4px 4px 0 var(--black);
+    line-height: 1.05;
+  }
+  .hero-subtitle {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--black); margin-bottom: 1.5rem;
+  }
+  .hero-desc {
+    font-size: 1.05rem; color: var(--black);
+    line-height: 1.7; margin-bottom: 2rem; font-weight: 600;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    font-family: 'Fredoka One', cursive;
+    background: var(--pink); color: white;
+    border: 2.5px solid var(--black);
+    padding: 0.8rem 2rem; border-radius: 50px;
+    cursor: pointer; font-size: 1.1rem;
+    box-shadow: 4px 4px 0 var(--black);
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 var(--black); }
+  .btn-secondary {
+    font-family: 'Fredoka One', cursive;
+    background: white; color: var(--black);
+    border: 2.5px solid var(--black);
+    padding: 0.8rem 2rem; border-radius: 50px;
+    cursor: pointer; font-size: 1.1rem;
+    box-shadow: 4px 4px 0 var(--black);
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-secondary:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 var(--black); background: var(--pink-light); }
+  .hero-mascot {
+    width: clamp(240px, 32vw, 400px);
+    filter: drop-shadow(6px 8px 0 rgba(0,0,0,0.15));
+    animation: bobble 3.5s ease-in-out infinite;
+  }
+  @keyframes bobble {
+    0%,100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-14px) rotate(1deg); }
+  }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .section-header { text-align: center; margin-bottom: 3.5rem; }
+  .section-tag {
+    display: inline-block;
+    background: var(--yellow); color: var(--black);
+    font-family: 'Fredoka One', cursive; font-size: 0.8rem;
+    padding: 0.25rem 1rem; border-radius: 50px;
+    border: 2px solid var(--black); box-shadow: 2px 2px 0 var(--black);
+    margin-bottom: 0.8rem; letter-spacing: 1px;
+  }
+  .section-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--pink); text-shadow: 3px 3px 0 var(--black);
+  }
+  .section-sub { margin-top: 0.5rem; font-size: 1rem; color: var(--black); opacity: 0.7; }
+
+  /* SERVICES */
+  #services { background: var(--pink-pale); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+  }
+  .service-card {
+    background: white;
+    border: 2.5px solid var(--black); border-radius: 20px;
+    padding: 2rem 1.5rem;
+    box-shadow: 5px 5px 0 var(--black);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 6px; background: var(--yellow);
+  }
+  .service-card:hover { transform: translate(-4px,-4px); box-shadow: 9px 9px 0 var(--black); }
+  .service-icon { font-size: 2.5rem; margin-bottom: 0.8rem; display: block; }
+  .service-name { font-family: 'Fredoka One', cursive; font-size: 1.3rem; color: var(--black); margin-bottom: 0.4rem; }
+  .service-desc { font-size: 0.9rem; color: #555; line-height: 1.6; }
+
+  /* CONTACT */
+  #contact { background: var(--yellow); }
+  .contact-inner {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .contact-card {
+    background: white;
+    border: 2.5px solid var(--black); border-radius: 20px;
+    padding: 2rem 1.5rem; text-align: center;
+    box-shadow: 5px 5px 0 var(--black);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none; color: var(--black);
+    display: flex; flex-direction: column; align-items: center; gap: 0.7rem;
+  }
+  .contact-card:hover { transform: translate(-4px,-4px); box-shadow: 9px 9px 0 var(--black); }
+  .contact-card .c-icon { font-size: 2.8rem; }
+  .contact-card .c-name { font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: var(--black); }
+  .contact-card .c-handle { font-size: 0.9rem; color: var(--pink); font-weight: 600; }
+  .contact-card .c-desc { font-size: 0.85rem; color: #777; line-height: 1.5; }
+
+  /* GALLERY */
+  #gallery { background: white; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem; max-width: 1100px; margin: 0 auto;
+  }
+  .gallery-item {
+    border: 2.5px solid var(--black); border-radius: 16px;
+    overflow: hidden; box-shadow: 4px 4px 0 var(--black);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; aspect-ratio: 1; position: relative;
+  }
+  .gallery-item:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 var(--black); }
+  .gallery-item:first-child { grid-row: span 2; aspect-ratio: auto; }
+  .gp {
+    width: 100%; height: 100%; min-height: 200px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Fredoka One', cursive; font-size: 0.95rem; color: white;
+    transition: transform 0.3s;
+  }
+  .gallery-item:hover .gp { transform: scale(1.05); }
+  .gp .gi { font-size: 2.5rem; }
+  .g1 { background: linear-gradient(135deg,#FF3E7F,#ff6fa3); }
+  .g2 { background: linear-gradient(135deg,#FFBF00,#ffd84d); }
+  .g3 { background: linear-gradient(135deg,#ff8fab,#ffb3c6); }
+  .g4 { background: linear-gradient(135deg,#FF3E7F,#FFBF00); }
+  .g5 { background: linear-gradient(135deg,#ffd6e7,#ffb3c6); color:#a0355a; }
+  .g6 { background: linear-gradient(135deg,#FFBF00,#FF3E7F); }
+  .g7 { background: linear-gradient(135deg,#ff6fa3,#ffd84d); }
+  .gallery-note { text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: #888; }
+
+  /* ABOUT */
+  #about { background: var(--yellow); }
+  .about-inner {
+    max-width: 1000px; margin: 0 auto;
+    display: flex; align-items: center; gap: 4rem; flex-wrap: wrap; justify-content: center;
+  }
+  .about-avatar {
+    width: 280px; height: 280px; border-radius: 50%;
+    border: 4px solid var(--black); box-shadow: 7px 7px 0 var(--black);
+    background: var(--pink-light);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 7rem; overflow: hidden;
+  }
+  .about-text { max-width: 500px; }
+  .about-text h2 { font-family: 'Fredoka One', cursive; font-size: 2.5rem; color: var(--black); margin-bottom: 1rem; }
+  .about-text p { font-size: 1rem; line-height: 1.8; color: var(--black); margin-bottom: 1rem; font-weight: 600; }
+  .about-badges { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .badge {
+    background: white; border: 2px solid var(--black);
+    border-radius: 50px; padding: 0.3rem 1rem;
+    font-family: 'Fredoka One', cursive; font-size: 0.85rem;
+    box-shadow: 2px 2px 0 var(--black); color: var(--black);
+  }
+  .badge.pink { background: var(--pink); color: white; }
+
+  /* TESTIMONIALS */
+  #testimonials { background: var(--pink-pale); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 1.5rem; max-width: 1000px; margin: 0 auto;
+  }
+  .testimonial-card {
+    background: white; border: 2.5px solid var(--black);
+    border-radius: 20px; padding: 1.8rem;
+    box-shadow: 5px 5px 0 var(--black);
+  }
+  .stars { font-size: 1.2rem; margin-bottom: 0.8rem; }
+  .testimonial-text { font-size: 0.95rem; line-height: 1.7; color: #444; margin-bottom: 1rem; font-style: italic; }
+  .testimonial-author { font-family: 'Fredoka One', cursive; font-size: 1rem; color: var(--pink); }
+
+  /* BOOKING */
+  #booking { background: white; }
+  .booking-inner {
+    max-width: 500px; margin: 0 auto;
+    background: var(--pink-pale);
+    border: 2.5px solid var(--black); border-radius: 24px;
+    padding: 3rem 2.5rem; box-shadow: 8px 8px 0 var(--black);
+  }
+  .booksy-btn {
+    display: inline-block;
+    font-family: 'Fredoka One', cursive;
+    background: var(--pink); color: white;
+    border: 2.5px solid var(--black);
+    padding: 1.1rem 3rem; border-radius: 50px;
+    font-size: 1.3rem;
+    box-shadow: 5px 5px 0 var(--black);
+    transition: transform 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+  }
+  .booksy-btn:hover { transform: translate(-4px,-4px); box-shadow: 9px 9px 0 var(--black); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black); color: white;
+    text-align: center; padding: 2.5rem 2rem;
+  }
+  .footer-logo { font-family: 'Fredoka One', cursive; font-size: 2rem; color: var(--yellow); text-shadow: 2px 2px 0 var(--pink); margin-bottom: 0.5rem; }
+  .footer-hearts { font-size: 1.2rem; margin: 0.5rem 0; }
+  footer p { font-size: 0.9rem; opacity: 0.6; margin-top: 0.5rem; }
+
+  /* ANIMATIONS */
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+
+
+  @media(max-width:680px){
+    nav { padding: 1rem 1.2rem; }
+    .nav-links { display: none; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: span 1; }
+    .about-avatar { width: 200px; height: 200px; font-size: 5rem; }
+    .booking-inner { padding: 2rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Nini's <span>Nails</span> ✦</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#booking">Book Now</a></li>
+  </ul>
+  <a href="#booking" class="nav-book-btn">✨ Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="star-bg" id="starBg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-tag">★ Nail Art & Manicures ★</div>
+      <div class="hero-title">NINI'S</div>
+      <div class="hero-subtitle">NAILS ✦</div>
+      <p class="hero-desc">Cute, creative, and totally unique nail art — where every set tells your story. 🌸</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn-primary">✨ Book Appointment</a>
+        <a href="#gallery" class="btn-secondary">🌸 View Gallery</a>
+      </div>
+    </div>
+    <img src="1772416298647_image.png" alt="Nini's Nails mascot" class="hero-mascot"
+         onerror="this.style.display='none';document.getElementById('mf').style.display='flex';">
+    <div id="mf" style="display:none;width:320px;height:320px;background:var(--pink-light);border:4px solid var(--black);border-radius:50%;align-items:center;justify-content:center;font-size:8rem;box-shadow:8px 8px 0 var(--black);">🐰</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header fade-in">
+    <div class="section-tag">✦ WHAT WE OFFER ✦</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Every service done with love and precision 💅</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <span class="service-icon">💅</span>
+      <div class="service-name">Classic Manicure</div>
+      <p class="service-desc">Shape, cuticle care, and polish in your favorite color. Clean, timeless, perfect for everyday.</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">✨</span>
+      <div class="service-name">Gel Manicure</div>
+      <p class="service-desc">Long-lasting gel color that stays chip-free for up to 3 weeks. High-shine finish always.</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">🌸</span>
+      <div class="service-name">Nail Art Set</div>
+      <p class="service-desc">Custom designs, characters, florals, Y2K, abstract — you dream it, Nini creates it!</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">🌟</span>
+      <div class="service-name">Acrylic Extensions</div>
+      <p class="service-desc">Full set of acrylic extensions in any shape and length, with or without art.</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">🌙</span>
+      <div class="service-name">Nail Removal</div>
+      <p class="service-desc">Safe and gentle removal of gel, acrylics or hard gel. Nail health always comes first!</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">💎</span>
+      <div class="service-name">Luxury Spa Mani</div>
+      <p class="service-desc">Indulge with exfoliation, mask, massage, and a gorgeous gel finish. Total treat yourself energy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-header fade-in">
+    <div class="section-tag">✦ PORTFOLIO ✦</div>
+    <h2 class="section-title">Nail Gallery</h2>
+    <p class="section-sub">A peek at Nini's latest creations 🌈</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item fade-in"><div class="gp g1"><span class="gi">🌸</span>Floral Gel Set</div></div>
+    <div class="gallery-item fade-in"><div class="gp g2"><span class="gi">⭐</span>Y2K Star Nails</div></div>
+    <div class="gallery-item fade-in"><div class="gp g3"><span class="gi">🌙</span>Moon & Stars</div></div>
+    <div class="gallery-item fade-in"><div class="gp g4"><span class="gi">🍓</span>Fruit Nail Art</div></div>
+    <div class="gallery-item fade-in"><div class="gp g5"><span class="gi">🦋</span>Butterfly Set</div></div>
+    <div class="gallery-item fade-in"><div class="gp g6"><span class="gi">💗</span>Pink Ombre</div></div>
+    <div class="gallery-item fade-in"><div class="gp g7"><span class="gi">🌟</span>Glitter Chrome</div></div>
+  </div>
+  <p class="gallery-note">📸 Follow <strong>@ninisnails</strong> on Instagram for the full portfolio!</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-avatar fade-in">🐰</div>
+    <div class="about-text fade-in">
+      <h2>Hey, I'm Nini! 👋</h2>
+
+
+      <p>I believe your nails are a form of self-expression, and I put my heart into every single set. Cleanliness, precision, and fun vibes are always guaranteed at my table. 🌸</p>
+        <div class="badge pink">✦ Licensed Nail Tech</div>
+        <div class="badge">3+ Years Experience</div>
+        <div class="badge">Nail Art Specialist</div>
+        <div class="badge pink">Gel & Acrylic Expert</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-header fade-in">
+    <div class="section-tag">✦ CLIENT LOVE ✦</div>
+    <h2 class="section-title">What Clients Say</h2>
+    <p class="section-sub">Real reviews from real cuties 💕</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Nini is AMAZING. She did my floral nail art and I got compliments all week. Will never go anywhere else!"</p>
+      <div class="testimonial-author">— Sofia R. 🌸</div>
+    </div>
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"The attention to detail is unreal. My gel set lasted 4 weeks with zero chipping. Nini's the best in the city!"</p>
+      <div class="testimonial-author">— Mia T. ✨</div>
+    </div>
+    <div class="testimonial-card fade-in">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"I showed her a complex design from Pinterest and she nailed it perfectly. The talent is insane! 💅"</p>
+      <div class="testimonial-author">— Jade L. 💗</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="section-header fade-in">
+    <div class="section-tag">✦ LET'S GET YOU BOOKED ✦</div>
+    <h2 class="section-title">Book an Appointment</h2>
+    <p class="section-sub">Fill out the form and Nini will confirm your slot! 🌟</p>
+  </div>
+  <div class="booking-inner fade-in" style="text-align:center;">
+    <div style="font-size:4rem; margin-bottom:1rem;">🐰</div>
+    <p style="font-family:'Fredoka One',cursive; font-size:1.2rem; color:var(--black); margin-bottom:0.6rem;">Ready for your dream nails?</p>
+    <p style="font-size:0.95rem; color:#666; margin-bottom:2rem; line-height:1.6;">Click below to view availability and book your appointment instantly on Booksy!</p>
+    <a href="https://booksy.com" target="_blank" class="booksy-btn">✨ Book on Booksy ✨</a>
+  </div>
+</section>
+
+<!-- CONTACT & SOCIALS -->
+<section id="contact">
+  <div class="section-header fade-in">
+    <div class="section-tag">✦ FIND NINI ✦</div>
+    <h2 class="section-title">Contact & Socials</h2>
+    <p class="section-sub">Slide into the DMs or reach out any way you like 💌</p>
+  </div>
+  <div class="contact-inner">
+    <a href="#" class="contact-card fade-in">
+      <span class="c-icon">📸</span>
+      <div class="c-name">Instagram</div>
+      <div class="c-handle">@ninisnails</div>
+      <div class="c-desc">Latest sets, inspo & updates — follow for daily nail content!</div>
+    </a>
+    <a href="#" class="contact-card fade-in">
+      <span class="c-icon">🎵</span>
+      <div class="c-name">TikTok</div>
+      <div class="c-handle">@ninisnails</div>
+      <div class="c-desc">Behind-the-scenes nail art videos & trending styles.</div>
+    </a>
+    <a href="#" class="contact-card fade-in">
+      <span class="c-icon">💙</span>
+      <div class="c-name">Facebook</div>
+      <div class="c-handle">Nini's Nails</div>
+      <div class="c-desc">Like our page for updates, promos & nail inspo!</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Nini's Nails ✦</div>
+  <div class="footer-hearts">🌸 💅 ⭐ 💗 🐰</div>
+  <p>Made with love for all the nail girlies out there</p>
+  <p style="margin-top:0.3rem;">© 2026 Nini's Nails · All rights reserved</p>
+</footer>
+
+
+
+<script>
+  // Floating star background
+  const starBg = document.getElementById('starBg');
+  const emojis = ['✦','★','✸','✿','♡','✩','◆'];
+  for (let i = 0; i < 22; i++) {
+    const s = document.createElement('span');
+    s.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    s.style.cssText = `
+      left:${Math.random()*100}%;
+      top:${Math.random()*100}%;
+      animation-delay:${Math.random()*4}s;
+      animation-duration:${4+Math.random()*4}s;
+      font-size:${0.8+Math.random()*1.5}rem;
+      color: ${Math.random()>0.5?'#FF3E7F':'#2b1d1d'};
+    `;
+    starBg.appendChild(s);
+  }
+
+  // Scroll fade-in
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+
+</script>
+</body>
+</html>
