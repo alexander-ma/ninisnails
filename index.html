@@ -224,36 +224,13 @@
 
   /* GALLERY */
   #gallery { background: white; }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.2rem; max-width: 1100px; margin: 0 auto;
-  }
-  .gallery-item {
+  .facebook-gallery {
+    width: min(100%, 500px); margin: 0 auto; overflow: hidden;
     border: 2.5px solid var(--black); border-radius: 16px;
-    overflow: hidden; box-shadow: 4px 4px 0 var(--black);
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer; aspect-ratio: 1; position: relative;
+    box-shadow: 6px 6px 0 var(--black); background: white;
   }
-  .gallery-item:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 var(--black); }
-  .gallery-item:first-child { grid-row: span 2; aspect-ratio: auto; }
-  .gp {
-    width: 100%; height: 100%; min-height: 200px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 0.5rem;
-    font-family: 'Fredoka One', cursive; font-size: 0.95rem; color: white;
-    transition: transform 0.3s;
-  }
-  .gallery-item:hover .gp { transform: scale(1.05); }
-  .gp .gi { font-size: 2.5rem; }
-  .g1 { background: linear-gradient(135deg,#FF3E7F,#ff6fa3); }
-  .g2 { background: linear-gradient(135deg,#FFBF00,#ffd84d); }
-  .g3 { background: linear-gradient(135deg,#ff8fab,#ffb3c6); }
-  .g4 { background: linear-gradient(135deg,#FF3E7F,#FFBF00); }
-  .g5 { background: linear-gradient(135deg,#ffd6e7,#ffb3c6); color:#a0355a; }
-  .g6 { background: linear-gradient(135deg,#FFBF00,#FF3E7F); }
-  .g7 { background: linear-gradient(135deg,#ff6fa3,#ffd84d); }
-  .gallery-note { text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: #888; }
+  .facebook-gallery iframe { display: block; width: 100%; height: 700px; border: 0; }
+  .gallery-link { text-align: center; margin-top: 1.8rem; }
 
   /* ABOUT */
   #about { background: var(--yellow); }
@@ -421,18 +398,21 @@
   <div class="section-header fade-in">
     <div class="section-tag">✦ PORTFOLIO ✦</div>
     <h2 class="section-title">Nail Gallery</h2>
-    <p class="section-sub">A peek at Nini's latest creations 🌈</p>
+    <p class="section-sub">See Nini's latest creations on Facebook 🌈</p>
   </div>
-  <div class="gallery-grid">
-    <div class="gallery-item fade-in"><div class="gp g1"><span class="gi">🌸</span>Floral Gel Set</div></div>
-    <div class="gallery-item fade-in"><div class="gp g2"><span class="gi">⭐</span>Y2K Star Nails</div></div>
-    <div class="gallery-item fade-in"><div class="gp g3"><span class="gi">🌙</span>Moon & Stars</div></div>
-    <div class="gallery-item fade-in"><div class="gp g4"><span class="gi">🍓</span>Fruit Nail Art</div></div>
-    <div class="gallery-item fade-in"><div class="gp g5"><span class="gi">🦋</span>Butterfly Set</div></div>
-    <div class="gallery-item fade-in"><div class="gp g6"><span class="gi">💗</span>Pink Ombre</div></div>
-    <div class="gallery-item fade-in"><div class="gp g7"><span class="gi">🌟</span>Glitter Chrome</div></div>
+  <div class="facebook-gallery fade-in">
+    <iframe
+      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61559704346826&amp;tabs=timeline&amp;width=500&amp;height=700&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false"
+      title="Nini's Nails Facebook timeline"
+      width="500"
+      height="700"
+      loading="lazy"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+    </iframe>
   </div>
-  <p class="gallery-note">📸 Follow <strong>@ninisnails</strong> on Instagram for the full portfolio!</p>
+  <div class="gallery-link fade-in">
+    <a href="https://www.facebook.com/people/Ninis-Nails/61559704346826/" target="_blank" rel="noopener noreferrer" class="btn-primary">View on Facebook</a>
+  </div>
 </section>
 
 <!-- ABOUT -->
